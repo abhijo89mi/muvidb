@@ -24,6 +24,13 @@ class Welcome extends CI_Controller {
 		$data['data'] = $this->welcome->welcome_page(); 
 		$this->load->view('welcome_message',$data);
 	}
+	public function data()
+	{
+		#$data = array()
+		$this->load->model('Model_main','welcome');
+		$data['data'] = $this->welcome->welcome_page(); 
+		$this->load->view('data',$data);
+	}
 }
 
 /* End of file welcome.php */
