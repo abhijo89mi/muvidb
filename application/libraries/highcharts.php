@@ -257,6 +257,12 @@ class Highcharts {
 		
 		return $this;
 	}
+	public function set_ax($type = 'false')
+	{
+		if ($type AND is_string($type)) $this->opts['chart']['inverted'] = $type;
+		
+		return $this;
+	}
 	
 	/**
 	 * set_dimensions function.

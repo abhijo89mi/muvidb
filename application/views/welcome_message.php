@@ -65,14 +65,18 @@
 	</style>
 	
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("jquery", "1.4.4");
+	</script>
+	<script type="text/javascript" src="http://www.highcharts.com/js/highcharts.js"></script>
 	<script>
 		$(document).ready(function(){
 
 		setInterval(function(){
 
 			 $.get('index.php/data', function(data) {
-				 $('#container').html(data);
+				 $('#body').html(data);
 			 });
 
 		}, 5000);
@@ -97,10 +101,10 @@
 
 <div id="container">
 	<h1>Welcome to MUVIDB ! </h1>
-
+	<?php if (isset($charts)) echo $charts; ?>
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
+		
 		<p>Data Base Information </p>
 		<code>
 			
